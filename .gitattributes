@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+# Images & binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.pdf binary
+*.jar binary
+*.zip binary
+*.exe binary
+*.dll binary
+
+# Build outputs (dont treat as text if they appear)
+frontend/dist/* -text
+backend/target/* -text
