@@ -33,3 +33,17 @@ If Ollama isn't running, the app falls back to a rule-based summary.
 
 ## Seed data
 `transactions.csv` preloads sample data into **H2** (in-memory).
+
+## Screenshots
+
+**Home (Light)**  
+![Home Light](docs/screenshots/home-light.png)
+
+**Home (Dark)**  
+![Home Dark](docs/screenshots/home-dark.png)
+
+**Monthly Summary (Chart)**  
+![Monthly Summary](docs/screenshots/summary.png)
+
+**Budgets & Alerts**  
+![Budgets & Alerts](docs/screenshots/budgetAlerts.png)
