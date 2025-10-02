@@ -1,0 +1,460 @@
+/* Teal Mint theme — with Dark Mode */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root{
+  --bg:#f4fdfa;
+  --card:#ffffff;
+  --border:#d9efe8;
+  --text:#0f172a;
+  --muted:#64748b;
+
+  --primary:#14b8a6;
+  --primary-600:#0d9488;
+  --primary-700:#0f766e;
+
+  --success:#16a34a;
+  --warn:#f59e0b;
+  --danger:#dc2626;
+  --info:#3b82f6;
+
+  --chip:#ecfdf5;
+  --chip-border:#c7eee8;
+
+  --radius:14px;
+  --shadow:0 10px 30px rgba(13,148,136,0.08);
+}
+
+/* DARK THEME OVERRIDES */
+:root.dark{
+  --bg:#081512;            /* deep teal-black */
+  --card:#0f201c;          /* dark card */
+  --border:#173d36;        /* darker border */
+  --text:#e6fffb;          /* minty light text */
+  --muted:#9cc5bf;         /* soft teal-gray */
+
+  --chip:#0d2723;          /* dark chip bg */
+  --chip-border:#1c4f47;
+
+  --shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Layout */
+.page{max-width:1100px;margin:0 auto;padding:24px}
+.h1{font-size:26px;font-weight:700;margin:0 0 12px}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px;
+  margin-top:16px;
+}
+.section-title{font-size:18px;font-weight:600;margin:0 0 8px}
+
+/* Inputs */
+.input, .select, .textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  color:#0f172a;
+  outline:none;
+  transition:box-shadow .15s, border-color .15s, background .15s, color .15s;
+}
+.input:focus, .select:focus, .textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(20,184,166,0.15);
+}
+:root.dark .input, :root.dark .select, :root.dark .textarea{
+  background:#102421; color:var(--text); border-color:var(--border);
+}
+
+/* Buttons */
+.btn{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:#0f172a;
+  cursor:pointer;
+  transition:transform .04s ease, background .15s, border-color .15s, color .15s, box-shadow .15s;
+}
+.btn:hover{background:#f8fffd}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+}
+.btn-primary:hover{background:var(--primary-600); border-color:var(--primary-600)}
+.btn-primary:active{background:var(--primary-700); border-color:var(--primary-700)}
+.btn-ghost{
+  background:transparent;
+  border-color:var(--border);
+  color:var(--muted);
+}
+:root.dark .btn{
+  background:#102421; color:var(--text); border-color:var(--border);
+}
+:root.dark .btn:hover{background:#0f2b27}
+:root.dark .btn-ghost{background:transparent}
+
+/* Chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+.chip{
+  background:var(--chip);
+  border:1px solid var(--chip-border);
+  border-radius:12px;
+  padding:10px 12px;
+  min-width:160px;
+}
+.chip label{display:block;font-size:12px;color:var(--muted)}
+.chip b{font-weight:700}
+
+/* Table */
+.table-wrap{
+  max-height:420px;
+  overflow:auto;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--card);
+}
+.table{width:100%;border-collapse:collapse}
+.table th, .table td{
+  padding:10px 8px;
+  border-bottom:1px solid #eef5f2;
+  font-size:14px;
+}
+:root.dark .table th, :root.dark .table td{
+  border-bottom:1px solid #163c35;
+}
+.table thead th{
+  position:sticky; top:0; background:var(--card); z-index:1;
+  text-align:left; font-weight:600; user-select:none;
+}
+.table tbody tr:nth-child(odd){background:#fcfffe}
+.table tbody tr:hover{background:#f2fbf8}
+:root.dark .table tbody tr:nth-child(odd){background:#0f2521}
+:root.dark .table tbody tr:hover{background:#12302b}
+.table tfoot td{
+  position:sticky; bottom:0; background:var(--card); z-index:1; font-weight:600;
+  border-top:1px solid var(--border);
+}
+
+/* Badges */
+.badge{font-size:12px;padding:2px 6px;border-radius:999px;border:1px solid transparent}
+.badge-ok{color:var(--success); border-color:#bfeacd; background:#effcf3}
+.badge-warn{color:var(--warn); border-color:#ffe8b8; background:#fff8e6}
+.badge-bad{color:var(--danger); border-color:#ffd1d1; background:#fff1f1}
+:root.dark .badge-ok{border-color:#184f35; background:#0e261a}
+:root.dark .badge-warn{border-color:#5c4615; background:#2a210c}
+:root.dark .badge-bad{border-color:#5a1a1a; background:#2a0f0f}
+
+/* Progress bar */
+.bar{height:10px;background:#eff6f4;border-radius:999px;overflow:hidden}
+.bar > span{display:block;height:100%;background:var(--primary);border-radius:999px}
+:root.dark .bar{background:#12342e}
+
+/* Toast */
+.toast{
+  position:fixed; right:16px; bottom:16px; color:#fff; padding:10px 12px;
+  border-radius:10px; box-shadow:0 12px 30px rgba(15,118,110,0.25); font-size:14px
+}
+.toast-success{background:#0f766e}
+.toast-error{background:#b91c1c}
+
+/* Chart helpers */
+.chart-note{font-size:10px;color:var(--muted);text-align:right;margin-top:4px}
+
+/* Little helper spacing */
+.row{display:grid; gap:8px}
+/* ==== Cards ===================================================== */
+.card {
+  background: var(--surface, #ffffff);
+  border: 1px solid color-mix(in oklab, var(--teal-700), white 85%);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px color-mix(in oklab, black, white 88%);
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.card:hover {
+  box-shadow: 0 10px 24px color-mix(in oklab, black, white 86%);
+  transition: box-shadow .18s ease;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: var(--teal-900, #064e3b);
+}
+
+.card-actions { display: flex; align-items: center; gap: 8px; }
+
+/* ==== Buttons =================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .15s ease, background-color .15s ease;
+  user-select: none;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--teal-600, #0d9488);
+  color: white;
+  box-shadow: 0 4px 14px color-mix(in oklab, var(--teal-700), white 70%);
+}
+.btn-primary:hover { background: var(--teal-700, #0f766e); }
+
+.btn-outline {
+  background: color-mix(in oklab, var(--teal-50,#f0fdfa), white 50%);
+  color: var(--teal-800, #115e59);
+  border-color: color-mix(in oklab, var(--teal-700), white 75%);
+}
+.btn-outline:hover {
+  background: color-mix(in oklab, var(--teal-100,#ccfbf1), white 35%);
+}
+
+/* Small utility spacing */
+.row { display: flex; align-items: center; gap: 8px; }
+.stack { display: grid; gap: 10px; }
+
+/* ==== Focus & Inputs ============================================ */
+:where(input, select, button, textarea):focus {
+  outline: 2px solid color-mix(in oklab, var(--teal-600), white 10%);
+  outline-offset: 2px;
+}
+
+.input, .select {
+  width: 100%;
+  border: 1px solid color-mix(in oklab, var(--teal-700), white 82%);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--surface, #fff);
+}
+
+/* ==== Tables (light polish only) ================================ */
+.table-card {
+  overflow: hidden;
+  border-radius: 16px;
+}
+.table-card table { width: 100%; border-collapse: collapse; }
+.table-card thead th {
+  background: color-mix(in oklab, var(--teal-50,#f0fdfa), white 60%);
+  font-weight: 700;
+  padding: 10px;
+}
+.table-card tbody td { padding: 10px; border-top: 1px solid #e8eeee; }
+
+/* ==== Scrollbar (subtle) ======================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--teal-700), white 70%) transparent;
+}
+*::-webkit-scrollbar { height: 10px; width: 10px; }
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--teal-700), white 70%);
+  border-radius: 12px;
+}
+
+/* ==== Dark Mode refinements ===================================== */
+:root.dark {
+  --surface: color-mix(in oklab, #0b1212, white 5%);
+}
+:root.dark .card {
+  border-color: color-mix(in oklab, var(--teal-300,#5eead4), black 60%);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+:root.dark .card-title { color: var(--teal-200, #99f6e4); }
+:root.dark .btn-primary {
+  background: color-mix(in oklab, var(--teal-500,#14b8a6), black 20%);
+}
+:root.dark .btn-outline {
+  background: color-mix(in oklab, #0b1212, white 4%);
+  color: var(--teal-100, #ccfbf1);
+  border-color: color-mix(in oklab, var(--teal-400,#2dd4bf), black 40%);
+}
+:root.dark thead th {
+  background: color-mix(in oklab, var(--teal-900,#134e4a), white 8%);
+}
+:root.dark .input, :root.dark .select {
+  background: color-mix(in oklab, #0b1212, white 6%);
+  border-color: color-mix(in oklab, var(--teal-400,#2dd4bf), black 55%);
+  color: #e8fffb;
+}
+/* ========= Color Tokens (Teal Mint) ========= */
+:root {
+  --bg: #f7fbfa;
+  --card: #ffffff;
+  --text: #0f2623;
+  --muted: #57706b;
+
+  --primary: #10b7a6;        /* main teal */
+  --primary-700: #0f8f83;     /* darker teal */
+  --border: color-mix(in oklab, var(--primary), white 85%);
+  --shadow: 0 6px 18px color-mix(in oklab, black, white 88%);
+
+  --success: #0ea5a0;
+  --danger: #e11d48;
+}
+
+:root.dark {
+  --bg: #0b1212;
+  --card: #0f1717;
+  --text: #eafffb;
+  --muted: #90a7a2;
+
+  --primary: color-mix(in oklab, #10b7a6, black 10%);
+  --primary-700: color-mix(in oklab, #0f8f83, black 10%);
+  --border: color-mix(in oklab, var(--primary), black 65%);
+  --shadow: 0 6px 18px rgba(0,0,0,.35);
+
+  --success: color-mix(in oklab, #0ea5a0, black 8%);
+  --danger: color-mix(in oklab, #e11d48, black 6%);
+}
+
+/* ========= Page & Typography ========= */
+html, body, #root { height: 100%; }
+body { background: var(--bg); color: var(--text); }
+
+.page { max-width: 1080px; margin: 0 auto; padding: 18px; }
+.h1 { font-size: 1.25rem; }
+
+/* ========= Layout helpers ========= */
+.row {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+/* ========= Cards (you already have .card from earlier step) ========= */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  box-shadow: var(--shadow);
+}
+.card-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px;
+}
+.card-title { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+.card-actions { display: flex; align-items: center; gap: 8px; }
+
+/* ========= Buttons ========= */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 12px; border: 1px solid transparent;
+  font-weight: 600; cursor: pointer; user-select: none;
+  transition: transform .06s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--primary); color: #fff; border-color: color-mix(in oklab, var(--primary), black 10%);
+  box-shadow: 0 4px 14px color-mix(in oklab, var(--primary-700), white 70%);
+}
+.btn-primary:hover { background: var(--primary-700); }
+.btn-outline {
+  background: color-mix(in oklab, var(--primary), white 88%);
+  color: color-mix(in oklab, var(--primary-700), black 10%);
+  border-color: var(--border);
+}
+:root.dark .btn-outline {
+  background: color-mix(in oklab, var(--card), white 6%);
+  color: color-mix(in oklab, var(--primary), white 20%);
+  border-color: var(--border);
+}
+
+/* ========= Inputs ========= */
+.input, .select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--card);
+  color: var(--text);
+}
+:where(input, select, button, textarea):focus {
+  outline: 2px solid color-mix(in oklab, var(--primary), white 10%);
+  outline-offset: 2px;
+}
+
+/* ========= Chips & Bars ========= */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 12px; border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--primary), white 90%);
+  color: var(--text); font-weight: 600;
+}
+:root.dark .chip { background: color-mix(in oklab, var(--card), white 8%); }
+
+.chip > label { font-weight: 600; color: var(--muted); margin-right: 4px; }
+
+.bar {
+  --h: 8px;
+  display: inline-block; width: 140px; height: var(--h);
+  background: color-mix(in oklab, var(--primary), white 85%);
+  border-radius: 999px; margin-right: 8px; overflow: hidden; vertical-align: middle;
+}
+.bar > span { display: block; height: var(--h); background: var(--primary); }
+
+/* small helper under chart */
+.chart-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
+
+/* ========= Table (light polish) ========= */
+.table { width: 100%; border-collapse: collapse; }
+.table thead th {
+  background: color-mix(in oklab, var(--primary), white 92%);
+  font-weight: 700; padding: 10px; text-align: left;
+}
+.table tbody td { padding: 10px; border-top: 1px solid var(--border); }
+.table tbody tr:nth-child(odd) { background: color-mix(in oklab, var(--card), white 4%); }
+.table tbody tr:hover { background: color-mix(in oklab, var(--primary), white 94%); }
+
+/* ========= Toasts ========= */
+.toast {
+  position: fixed; right: 16px; bottom: 16px; padding: 10px 14px; border-radius: 12px;
+  background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow);
+  font-weight: 700;
+}
+.toast-success { color: var(--success); }
+.toast-error { color: var(--danger); }
+
+/* ========= Scrollbar (subtle) ========= */
+* { scrollbar-width: thin; scrollbar-color: color-mix(in oklab, var(--primary), white 70%) transparent; }
+*::-webkit-scrollbar { height: 10px; width: 10px; }
+*::-webkit-scrollbar-thumb { background: color-mix(in oklab, var(--primary), white 70%); border-radius: 12px; }

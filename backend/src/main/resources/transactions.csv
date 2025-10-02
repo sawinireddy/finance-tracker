@@ -1,0 +1,13 @@
+date,merchant,amount,category,notes
+2025-08-02,COSTCO,125.40,Groceries,Weekly groceries
+2025-08-05,UBER,18.20,Transport,Airport ride
+2025-08-09,STARBUCKS,7.85,Dining,Coffee
+2025-08-15,RENT,1200.00,Housing,Monthly rent
+2025-08-20,AMAZON,54.99,Shopping,Headphones case
+2025-09-01,RENT,1200.00,Housing,Monthly rent
+2025-09-03,WALMART,82.10,Groceries,Groceries
+2025-09-04,UBER,22.50,Transport,City ride
+2025-09-07,CHIPOTLE,14.75,Dining,Lunch
+2025-09-10,AMAZON,89.00,Shopping,Keyboard
+2025-09-12,SPROUTS,56.30,Groceries,Produce
+2025-09-14,NETFLIX,15.99,Entertainment,Subscription
